@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="platillos.js"></script>
+<link rel="stylesheet" href="hojacss.css">
+<title>Korean Buffet</title>
+<link rel="shorcut icon" href="logo.jpeg">
+</head>
+<body class="body">
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand"><img src="logo2.png" width="200px" height="200px"></img></a>
+            <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">
+                <i class="bi bi-search-heart"></i>
+            </button>
+            <div onclick="toggleCart()"><i class="bi bi-basket2"></i></div>
+            <div class="cart-container">
+                <span class="close-btn" onclick="toggleCart()">✖️</span>
+                <h2 class="compras-title">Carrito de Compras</h2>
+                <div class="cart"></div>
+                <div class="total"></div>
+            </div>
+        </div>
+    </nav>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle btn-option" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          PLATILLOS
+        </button>
+        <ul class="dropdown-menu dropdown-menu-dark">
+               <li><a class="dropdown-item " href="index.html">Inicio</a></li>
+               <li><a class="dropdown-item" href="contacto.html">Contactanos</a></li>
+        </ul>
+    </div>
+
+    <div class="card-group">
+        <div class="card">
+            <img src="kimchi.jpg" class="card-img-top img-item" alt="...">
+            <div class="card-body product" data-id="1" data-name="Kimchi" data-price="65.00">
+                <h5 class="card-title titulo-item">KIMCHI</h5>
+                <p class="card-text">Contiene repollo chino fermentado con chile y otros ingredientes.</p>
+                <button type="button"  class="btn btn-primary center" onclick="addToCart(event)">Agregar al carrito</button>
+            </div>
+            <div class="card-footer">
+                <small class="text-body-secondary precio-item">$65.00MX</small>
+            </div>
+        </div>
+        <div class="card">
+            <img src="Leche vegana.jpg" class="card-img-top" alt="...">
+            <div class="card-body product" data-id="2" data-name="Leche vegana" data-price="40.00">
+                <h5 class="card-title">LECHE VEGANA</h5>
+                <p class="card-text">Es una bebida que consiste basicamente en leche variedad de sabores.</p>
+                <button type="button" class="btn btn-primary center"  onclick="addToCart(event)">Agregar al carrito </button>
+            </div>
+            <div class="card-footer">
+                <small class="text-body-secondary">$40.00MX</small>
+            </div>
+        </div>
+        <div class="card">
+            <img src="taiyaki.jpg" class="card-img-top" alt="...">
+            <div class="card-body product" data-id="3" data-name="Taiyaki" data-price="35.00">
+                <h5 class="card-title">TAIYAKI</h5>
+                <p class="card-text">El relleno mas frecuente es la pasta de dulce que se elabora a partir de judias endulzadas sus rellenos es de chocolate.</p>
+                <button type="button" class="btn btn-primary center"  onclick="addToCart(event)">Agregar al carrito </button>
+            </div>
+                <div class="card-footer">
+                <small class="text-body-secondary">35.00MX</small>
+            </div>
+        </div>
+      </div>   
+  <div class="card-group">
+    <div class="card">
+      <img src="soju.jpg" class="card-img-top" alt="...">
+      <div class="card-body product" data-id="4" data-name="Soju" data-price="45.00">
+        <h5 class="card-title">SOJU</h5>
+        <p class="card-text">Es arroz blanco fermentado con un sabor crujiente, un poco de manzana y a veces un toque de arroz quemado.</p>
+         <button type="button" class="btn btn-primary center"  onclick="addToCart(event)">Agregar al carrito</button>
+      </div>
+      
+      <div class="card-footer">
+        <small class="text-body-secondary">$45.00MX</small>
+      </div>
+    </div>
+    <div class="card">
+      <img src="barbacoa coreana.jpg" class="card-img-top" alt="...">
+      <div class="card-body product" data-id="5" data-name="Barbacoa coreana" data-price="100.00">
+        <h5 class="card-title">BARBACOA COREANA</h5>
+        <p class="card-text">Esta consiste en convinar varios platos tradicionales solomillo de ternera ,chuleta de ternera ,pollo entre otros. </p>
+        <button type="button" class="btn btn-primary center"  onclick="addToCart(event)">Agregar al carrito</button>
+      </div>
+      <div class="card-footer">
+        <small class="text-body-secondary">$100.00MX</small>
+      </div>
+    </div>
+    <div class="card">
+      <img src="mochi.jpg" class="card-img-top" alt="...">
+      <div class="card-body product" data-id="6" data-name="Mochi" data-price="50.00">
+        <h5 class="card-title">MOCHI</h5>
+        <p class="card-text">Son bizcochos de arroz con forma redonda y textura gomosa de varios sabores.</p>
+        <button type="button" class="btn btn-primary center"  onclick="addToCart(event)">Agregar al carrito</button>
+      </div>
+      <div class="card-footer">
+        <small class="text-body-secondary">$50.00</small>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="card-group">
+        <div class="card">
+          <img src="banchan.jpg" class="card-img-top" alt="...">
+          <div class="card-body product" data-id="7" data-name="Banchan" data-price="25.00">
+            <h5 class="card-title">BANCHAN</h5>
+            <p class="card-text">Es una variedad de platos generalmente con pequeña cantidad de comida que se sirven para ser acompañados con arroz en la cocina.</p>
+              <button type="button" class="btn btn-primary center" onclick="addToCart(event)">Agregar al carrito</button>
+          </div>
+          <div class="card-footer">
+            <small class="text-body-secondary">$25.00MX</small>
+          </div>
+        </div>
+        <div class="card">
+          <img src="brochetas de pescado.jpg" class="card-img-top" alt="...">
+          <div class="card-body product" data-id="8" data-name="Brochetas de pescado" data-price="80.00">
+            <h5 class="card-title">BROCHETAS DE PESCADO</h5>
+            <p class="card-text"> Están hechas de pescado y marisco picados, que se fríen hasta obtener una textura crujiente, sabrosas y son una delicia.</p>
+              <button type="button" class="btn btn-primary center"  onclick="addToCart(event)">Agregar al carrito</button>
+          </div>
+          <div class="card-footer">
+            <small class="text-body-secondary">$80.00MX</small>
+          </div>
+        </div>
+        <div class="card">
+          <img src="bubble tea milk.jpg" class="card-img-top" alt="...">
+          <div class="card-body product" data-id="9" data-name="Bubble milk tea" data-price="80.00">
+            <h5 class="card-title">BUBBLE MILK TEA</h5>
+            <p class="card-text">Su base es un té mezclado con fruta, jarabe de fruta, yogur o leche, que se agita para crear una espuma se le agregan bolitas o perlas de tapioca.</p>
+            <button type="button" class="btn btn-primary center"  onclick="addToCart(event)">Agregar al carrito</button>
+          </div>
+          <div class="card-footer">
+            <small class="text-body-secondary">$80.00MX</small>
+          </div>
+        </div>
+      </div>
+      <div class="card-group">
+        <div class="card">
+          <img src="bulgogi.jpg" class="card-img-top" alt="...">
+          <div class="card-body product" data-id="10" data-name="Bulgogi" data-price="95.00">
+            <h5 class="card-title">BULGOGI</h5>
+            <p class="card-text">Se prepara con ternera cortada en tiras,que se marina con salsa de soja,az&uacute;car,aceite de s&eacute;samo y ajo es un plato tipico de la gatronomia.</p>
+            <button type="button" class="btn btn-primary"  onclick="addToCart(event)">Agregar al carrito</button>
+          </div>
+          <div class="card-footer">
+            <small class="text-body-secondary">$95.00MX</small>
+          </div>
+        </div>
+        <div class="card">
+          <img src="kimbap.jpg" class="card-img-top" alt="...">
+          <div class="card-body product" data-id="11" data-name="Kimbap" data-price="35.00">
+            <h5 class="card-title">KIMBAP</h5>
+            <p class="card-text">El gimbap es un plato de origen coreano elaborado a base de arroz blanco cocido y otros ingredientes enrollados en alga prensada.Puede venir acompañado de danmuji.</p>
+            <button type="button" class="btn btn-primary"  onclick="addToCart(event)">Agregar al carrito </button>
+          </div>
+          <div class="card-footer">
+            <small class="text-body-secondary">$35.00MX</small>
+          </div>
+        </div>
+        <div class="card">
+          <img src="ramen.jpg" class="card-img-top" alt="...">
+          <div class="card-body product" data-id="12" data-name="Ramen" data-price="25.00">
+            <h5 class="card-title">RAMEN</h5>
+            <p class="card-text">Es una sopa instantanea que puedes comerla a tu gusto si la quieres muy picante o no hasta puede ser con leche.</p>
+            <button type="button" class="btn btn-primary"  onclick="addToCart(event)">Agregar al carrito</button>
+          </div>
+          <div class="card-footer">
+            <small class="text-body-secondary">$25.00MX</small>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <div class="f-item-con">
+            <div class="app-info">
+                <span class='app-name'>
+                    <span class='app-initial'>K</span>orean <span class='app-initial'>B</span>uffet
+                </span>
+                <p>Somos un restaurante comprometidos <strong>por que pasen una gran experiencia</strong> con <strong>todo nuestro menu además</strong> también con un diseño web diseñado para usted.</p>
+            </div>
+            <div class="useful-links">
+                <div class="footer-title">Paginá web y Restaurante</div>
+                <ul>
+                    <li>Danna Ismerari Serrano González</li>
+                    <li>Luz Janeth Hernandez Caudillo</li>
+                </ul>
+            </div>
+            <div class="help-sec">
+                <div class="footer-title"><a href="contacto.html">Contactanos</a></div>
+                <ul>
+                    <li>+52 1 477 838 9745</li>
+                    <li>+52 1 479 233 4093</li>
+                </ul>
+            </div>
+            <div class="g-i-t">
+                <div class="footer-title">Quejas y sugerencias</div>
+                <form action="/" method="post" class="space-y-2">
+                    <input type="text" name="g-name" class="g-inp" id="g-name" placeholder='Nombre' />
+                    <input type="email" name="g-email" class="g-inp" id="g-email" placeholder='Email' />
+                    <textarea type="text" name="g-msg" class="g-inp h-40 resize-none" id="g-msg"
+                        placeholder='Mensaje...'></textarea>
+                    <button type="submit" class='f-btn'>Enviar</button>
+                </form>
+            </div>
+        </div>
+        <div class='cr-con'>Copyright &copy; 2024 | Made by Korean Buffet</div>
+    </footer>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
